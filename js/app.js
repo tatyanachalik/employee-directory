@@ -14,6 +14,7 @@ fetch(urlAPI)
 
 function displayEmployees(employeeData) {
     employees = employeeData;
+    console.log(employees);
     // store the employee HTML as we create it
     let employeeHTML = '';
     // loop through each employee and create HTML markup
@@ -50,8 +51,8 @@ function displayModal(index) {
     let date = new Date(dob.date);
 
     const modalHTML = `
-       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-       <a class="next" onclick="plusSlides(1)">&#10095;</a>
+       <a class="prev" onclick="plusSlides(-1, ${name.first})">&#10094;</a>
+       <a class="next" onclick="plusSlides(1, ${name.first})">&#10095;</a>
         <img class="avatar" src="${picture.large}" alt="${name.first} ${name.last}"/>
         <div class="text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
@@ -105,8 +106,8 @@ function searchEmployees() {
 }
 }
 
-function plusSlides(n) {
-    let index = employees.indexOf(); 
+function plusSlides(n, firstName) {
+    let index = employees.map(object => object.name.first).indexOf(firstName);
     console.log(index);
     index += n;
     console.log(index);
