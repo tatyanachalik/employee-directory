@@ -61,8 +61,8 @@ p {
 
 .avatar {
     flex-basis: 20%;
-    height: 90px;
-    width: auto;
+    max-height: 90px;
+    max-width: 90px;
     border-radius: 50px 50px;
 }
 

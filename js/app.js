@@ -127,7 +127,7 @@ function searchEmployees() {
         grabAlt = grabAlt.toUpperCase();
 
         if (grabAlt.includes(searchVal)){
-            card[i].style.display = 'inherit';
+            card[i].style.display = 'flex';
             employees2.push(employees[i]);
             counter++;
         } else {
