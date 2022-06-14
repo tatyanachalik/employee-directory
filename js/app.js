@@ -51,8 +51,8 @@ function displayModal(index) {
     let date = new Date(dob.date);
 
     const modalHTML = `
-       <a class="prev" onclick="plusSlides(-1, ${name.first})">&#10094;</a>
-       <a class="next" onclick="plusSlides(1, ${name.first})">&#10095;</a>
+       <a class="prev" onclick="plusSlides(-1, '${name.first}')">&#10094;</a>
+       <a class="next" onclick="plusSlides(1, '${name.first}')">&#10095;</a>
         <img class="avatar" src="${picture.large}" alt="${name.first} ${name.last}"/>
         <div class="text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
@@ -109,7 +109,13 @@ function searchEmployees() {
 function plusSlides(n, firstName) {
     let index = employees.map(object => object.name.first).indexOf(firstName);
     console.log(index);
+    
     index += n;
+    if(index === -1 ){
+        index = 11;
+    }else if (index === 12){
+        index = 0;
+    }
     console.log(index);
     displayModal(index);
     console.log(employees.name)
