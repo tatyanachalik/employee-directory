@@ -43,27 +43,30 @@ function displayEmployees(employeeData) {
 function displayModal(index) {
     // use object destructuring make our template literal cleaner
     
-    
+    console.log(index);
     let { name, dob, phone, email, location: { city, street, state, postcode
     }, picture } = employees[index];
     
     let date = new Date(dob.date);
 
     const modalHTML = `
-        <img class="avatar" src="${picture.large}" />
+       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+       <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <img class="avatar" src="${picture.large}" alt="${name.first} ${name.last}"/>
         <div class="text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
             <p class="email">${email}</p>
             <p class="address">${city}</p>
-            <hr />
-            <p>${phone}</p>
-            <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
+            <hr class="line"/>
+            <p class="phone">${phone}</p>
+            <p class="long-address">${street.number} ${street.name}, ${state} ${postcode}</p>
             <p>Birthday:
             ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
     `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+    
 }
 
 gridContainer.addEventListener('click', e => {
@@ -80,3 +83,34 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
+
+// SEARCH MEMBER
+function searchEmployees() {
+    let searchVal = document.getElementById('search');
+    searchVal = searchVal.value.toUpperCase();
+    let card = document.getElementsByClassName('card');
+    let employee = document.getElementsByClassName('avatar');
+ 
+
+    for (let i = 0 ; i < 12; i++) {
+        let grabAlt = employee[i].getAttribute('alt');
+        grabAlt = grabAlt.toUpperCase();
+
+        if (grabAlt.includes(searchVal)){
+            card[i].style.display = 'inherit';
+        } else {
+            card[i].style.display = 'none';
+        }
+
+}
+}
+
+function plusSlides(n) {
+    let index = employees.indexOf(); 
+    console.log(index);
+    index += n;
+    console.log(index);
+    displayModal(index);
+    console.log(employees.name)
+}
+
