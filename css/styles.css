@@ -33,6 +33,7 @@ h1 {
     width: 80%;
     border: 1px solid lightgrey;
     font-weight: 200;
+    box-shadow: 1px 1px 1px rgb(107, 165, 129);
 }
 
 .search-field:focus {
@@ -60,6 +61,7 @@ main {
     border-radius: 5px 5px;
     border: 2px solid rgb(176, 212, 165);
     transition: all 0.4s ease-out;
+    box-shadow: 2px 2px 2px rgb(107, 165, 129);
 }
 
 .card:hover {
