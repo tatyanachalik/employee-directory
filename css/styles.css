@@ -36,7 +36,7 @@ h1 {
     height: 100%;
     border: 1px solid lightgrey;
     border-radius: 5px 5px;
-    /* box-shadow: 1px 1px 1px rgb(107, 165, 129); */
+    box-shadow: 1px 1px 1px rgb(107, 165, 129);
 }
 
 .search-field:focus {
