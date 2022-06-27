@@ -22,7 +22,7 @@ body {
 
 h1 {
     color: rgb(70, 125, 91);
-    padding: 50px 0 20px 25px;
+    padding: 50px 0 20px 15px;
     font-size: 25px;
     margin:0;
 }
@@ -33,12 +33,13 @@ h1 {
     margin: 20px auto 40px;
     width: 70%;
     border: 1px solid lightgrey;
+    border-radius: 5px 5px;
     font-weight: 200;
     box-shadow: 1px 1px 1px rgb(107, 165, 129);
 }
 
 .search-field:focus {
-    outline: 2px solid rgb(53, 151, 93);
+    border: 2px solid rgb(53, 151, 93);
 }
 
 input,
