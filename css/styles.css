@@ -22,20 +22,20 @@ body {
 
 h1 {
     color: rgb(70, 125, 91);
-    padding: 50px 0 20px 10px;
+    /* padding: 50px 0 20px 10px; */
     font-size: 25px;
-    margin:0;
+    margin:50px 0 0 0;
+    text-align: center;
 }
 
 .search-field {
     display: block;
     padding: 10px;
     margin: 20px auto 40px;
-    width: 50%;
+    width: 70%;
     height: 100%;
     border: 1px solid lightgrey;
     border-radius: 5px 5px;
-    font-weight: 200;
     /* box-shadow: 1px 1px 1px rgb(107, 165, 129); */
 }
 
@@ -47,6 +47,8 @@ h1 {
 input,
 input::placeholder {
     color:rgb(57, 106, 77);
+    font-weight: 200;
+    font-size: 15px;
 }
 
 main {
@@ -170,14 +172,15 @@ hr.line {
     display: none;
 }
 
-@media (min-width: 321px) {
+@media (min-width: 400px) {
 
     main {
         padding: 0 50px 50px;
     }
 
     h1 {
-        padding: 50px 0 20px 53px;
+        text-align: left;
+        padding: 0 0 20px 53px;
     }
 
 }
